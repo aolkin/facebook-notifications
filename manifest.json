@@ -1,0 +1,25 @@
+{
+    "manifest_version": 2,
+
+    "name": "Facebook Desktop Notifications",
+    "icons": { "128": "icon.png" },
+    "description": "Provides desktop notifications for facebook messages.",
+    "version": "0.1",
+
+    "permissions": [
+	"https://www.facebook.com/",
+	"notifications"
+    ],
+    "content_scripts": [
+	{
+	    "matches": ["https://www.facebook.com/*"],
+	    "js": [ "content.js" ]
+	}
+    ],
+    "background": {
+	"scripts": ["bg.js"]
+    },
+    "web_accessible_resources": [
+	"icon.png"
+    ]
+}
